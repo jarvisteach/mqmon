@@ -17,7 +17,7 @@ function popTopicSelect()
 
 (function processTopics()
 {
-	setTimeout(processTopics, 2500);
+	setTimeout(processTopics, 10000);
 
 
 	// the topics we are subscribed to
@@ -35,9 +35,6 @@ function popTopicSelect()
 
 	// first param is to stop caching
 	var url = "getTopics.php?ranNum=" + Math.random() + "&topic=" + encodeURIComponent(myTopics);
-
-	self.xmlHttpReq.open('POST', url, false);
-	self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	// this takes up to 2.5 seconds!!!!!
 	self.xmlHttpReq.onreadystatechange = function()
@@ -84,6 +81,9 @@ function popTopicSelect()
 
 	}
 
+	// do it async...
+	self.xmlHttpReq.open('POST', url, true);
+	self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	self.xmlHttpReq.send();
 }) ()
 
@@ -172,9 +172,6 @@ function publishMessage()
 	// first param is to stop caching
 	var url = "pubMess.php?ranNum=" + Math.random() + "&topic=" + encodeURIComponent(myTopic) + "&message=" + encodeURIComponent(myMessage);
 
-	self.xmlHttpReq.open('POST', url, false);
-	self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
 	self.xmlHttpReq.onreadystatechange = function()
 	{
 		if (self.xmlHttpReq.readyState == 4 && self.xmlHttpReq.status == 200)
@@ -197,5 +194,7 @@ function publishMessage()
 
 	}
 
+	self.xmlHttpReq.open('POST', url, true);
+	self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	self.xmlHttpReq.send();
 }

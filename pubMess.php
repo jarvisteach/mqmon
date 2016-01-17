@@ -13,7 +13,7 @@
 	}
 
 	require("resources/phpMQTT.php");
-	$mqtt = new phpMQTT("192.168.1.10", 1883, "Web PHP MQTT Client", "ahmsNode", "ahms2013");
+	$mqtt = new phpMQTT("192.168.1.20", 1883, "Web PHP MQTT Client", "ahmsNode", "ahms2013");
 
 	$message = trim($_GET["message"]);
 	$topic = trim($_GET["topic"]);
