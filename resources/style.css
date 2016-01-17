@@ -1,0 +1,129 @@
+/* ------------------
+ styling for the table 
+   ------------------   */
+
+body
+{
+	line-height: 1.6em;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+}
+
+#messageTable
+{
+	margin: 45px;
+	width: 520px;
+	text-align: left;
+	border-collapse: collapse;
+	background: url('blurry.jpg') 330px 59px no-repeat;
+}
+#messageTable caption
+{
+	font-size: 18px;
+	font-weight: bold;
+	padding: 2px;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+
+#messageTable tfoot td
+{
+	font-size: 10px;
+	font-weight: normal;
+	font-style: italic;
+	padding: 2px;
+	background: #b9c9fe;
+	border-top: 1px solid #fff;
+	border-bottom: 4px solid #aabcfe;
+	color: #039;
+}
+#messageTable th
+{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 2px;
+	background: #b9c9fe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+#messageTable td
+{
+	padding: 2px 2px;
+	background: #e8edff; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+}
+
+#messageTable tbody td
+{
+	background: url('back.png');
+}
+
+* html #messageTable tbody td
+{
+	/* 
+	   ----------------------------
+		PUT THIS ON IE6 ONLY STYLE 
+		AS THE RULE INVALIDATES
+		YOUR STYLESHEET
+	   ----------------------------
+	*/
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='back.png',sizingMethod='crop');
+	background: none;
+}	
+
+#messageTable tr:hover td
+{
+	background: none;
+	color: #339;
+}
+
+#messageTable td.errorCell
+{
+	color: white;
+	background-color: #ff3300;
+}
+
+
+.hidden
+{
+	display: none;
+	border: 1px dotted #58595b;
+	
+}
+
+.refreshButton
+{
+	float: right;
+}
+.validation
+{
+	font-size: 12px;
+	border: 1px solid;
+	margin: 2px 2px;
+	padding: 2px;
+	color: #D63301;
+	background-color: #FFCCBA;
+	display: none;
+	white-space: nowrap;
+}
+
+#publishResults th td
+{
+	color: red;
+}
+
+.leftButtons
+{
+	float: left;
+	border: 1px dotted #58595b;
+}
+
+.rightButtons
+{
+	float: right;
+	border: 1px dotted #58595b;
+}
